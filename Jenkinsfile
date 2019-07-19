@@ -5,6 +5,7 @@ node('swarm') {
             curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
             chmod a+x ~/bin/repo
             PATH=~/bin:$PATH
+            rm -rf ~/.repo
             repo init -u https://github.com/LineageOS/android.git -b lineage-16.0
         '''
     }
@@ -15,22 +16,4 @@ node('swarm') {
             repo sync -f --force-sync --force-broken --no-clone-bundle --no-tags -j$(nproc --all)
         '''
     }
-    post {
-        always {
-            echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
-        }
-        success {
-            echo 'I succeeeded!'
-        }
-        unstable {
-            echo 'I am unstable :/'
-        }
-        failure {
-            echo 'I failed :('
-        }
-        changed {
-            echo 'Things were different before...'
-        }
-    }    
 }
