@@ -18,6 +18,7 @@ node('master') {
         sh ''' set -x
             apt-get install -y --no-install-recommends \
                   bc \
+                  ssh \
                   bison \
                   build-essential \
                   ccache \
