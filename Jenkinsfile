@@ -12,7 +12,7 @@ node('master') {
     }
     stage('Apt Upgrade') {
         sh ''' set -x
-            apt upgrade 2>/dev/null
+            apt upgrade -y 2>/dev/null
         '''
     }
     stage('Install Dep.') {
