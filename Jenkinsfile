@@ -5,7 +5,6 @@ node('swarm') {
             curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
             chmod a+x ~/bin/repo
             PATH=~/bin:$PATH
-            rm -rf ~/.repo
             repo init -u https://github.com/LineageOS/android.git -b lineage-16.0
         '''
     }
