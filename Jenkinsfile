@@ -2,8 +2,7 @@ node('master') {
     stage('Version Check') {
         sh ''' set -x
             cat /proc/version
-            apt upgrade 2>/dev/null
-           
+            apt upgrade 2>/dev/null        
         '''
     }
     stage('Apt Update') {
