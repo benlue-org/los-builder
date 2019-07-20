@@ -47,6 +47,20 @@ node('master') {
                   squashfs-tools \
                   xsltproc \
                   zip \
+				  gcc \
+				  binutils \
+				  bzip2 \
+				  flex \
+				  python \
+				  perl \
+				  make \
+				  find \
+				  grep \
+				  diff \
+				  unzip \
+				  gawk \
+				  getopt \
+				  subversion \
                   zlib1g-dev 2>/dev/null
         '''
     }    
