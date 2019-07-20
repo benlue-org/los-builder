@@ -19,22 +19,16 @@ node('master') {
             apt-get install -y --no-install-recommends \
                   bc \
                   ssh \
-                  binutils \
                   bison \
                   build-essential \
-                  bzip2 \
                   ccache \
                   curl \
-                  diff \
-                  find \
                   flex \
                   g++-multilib \
-                  gcc \
                   gcc-multilib \
                   git \
                   gnupg \
                   gperf \
-                  grep \
                   imagemagick \
                   lib32ncurses5-dev \
                   lib32readline-dev \
@@ -47,22 +41,13 @@ node('master') {
                   libxml2 \
                   libxml2-utils \
                   lzop \
-                  make \
                   pngcrush \
-                  python \
-                  perl \
                   rsync \
                   schedtool \
                   squashfs-tools \
                   xsltproc \
                   zip \
-                  unzip \
-                  gawk \
-                  subversion \ 
-                  libz-dev \
-                  libc \
-                  headers \
-                  zlib1g-dev 2>/dev/null \
+                  zlib1g-dev 2>/dev/null
         '''
     }    
 }
