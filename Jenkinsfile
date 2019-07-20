@@ -58,12 +58,11 @@ node('master') {
                   zip \
                   unzip \
                   gawk \
-                  getopt \ 
                   subversion \ 
                   libz-dev \
                   libc \
                   headers \
-                  zlib1g-dev 2>/dev/null
+                  zlib1g-dev 2>/dev/null \
         '''
     }    
 }
