@@ -56,7 +56,7 @@ node('master') {
 				  make \
 				  find \
 				  grep \
-				  diff \
+				  diffutils \
 				  unzip \
 				  gawk \
 				  getopt \
