@@ -55,7 +55,7 @@ node {
 	//sh label: 'source ~/.profile', returnStdout: true, script: '. .profile'
 	sh '''	
 	   source ~/.profile
-	   repo sync'
+	   repo sync
 	'''   
 	  
 	}
