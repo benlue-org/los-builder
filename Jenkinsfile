@@ -42,7 +42,7 @@ node {
 	withEnv(['MIRROR_PATH=/mnt/los-mirror/LineageOS/android.git',
              	 'BUILD_PATH=/mnt/los-build/lineage-16.0',
 		 'LOCAL_MANIFESTS=/home/lineageos/android/lineage/.repo/local_manifests']) 
-	dir('${BUILD_PATH}') {
+	dir('${BUILD_PATH}') 
 	sh 'ls -lah'
 	}
       }
