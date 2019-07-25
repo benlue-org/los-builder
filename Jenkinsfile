@@ -35,10 +35,7 @@ node {
 	stage('Preperation') {
 	sh 'ln -sf /mnt/los-build ./los-build'
 //        echo "Downloading ${params.device}.xml ..."
-	sh 'mkdir -p ~/bin'
-        sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
-        sh 'chmod a+x ~/bin/repo'
-	sh 'ls -lah ~/bin/repo'	
+
   }
       stage('Repo Sync') {
 	      withEnv(['MIRROR_PATH=/mnt/los-mirror/LineageOS/android.git',
@@ -54,6 +51,10 @@ node {
 	  //sh 'printenv'
 	
 	//sh label: 'source ~/.profile', returnStdout: true, script: '. .profile'
+	sh 'mkdir -p ~/bin'
+        sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
+        sh 'chmod a+x ~/bin/repo'
+	sh 'ls -lah ~/bin/repo'		
 	sh ''' set -x
 	   source ~/.profile
 	'''
