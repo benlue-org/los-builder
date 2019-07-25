@@ -46,7 +46,6 @@ node {
         echo '${params.branch}'
 	sh 'printenv'
 	sh 'ls -lah'
-	}
       }
  
 //    stage('Update Feeds') {
