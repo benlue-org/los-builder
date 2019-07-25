@@ -43,7 +43,7 @@ node {
   }
       stage('Repo Sync') {
 	      dir('${BUILD_PATH}') {
-//	sh 'ls -lah'
+	sh 'ls -lah'
 	}
       }
  
