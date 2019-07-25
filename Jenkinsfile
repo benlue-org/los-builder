@@ -31,9 +31,6 @@ properties([parameters([choice(choices: ['jfltexx', 'jfvelte', 'TL-WR1043NDv1'],
 node {
   try {
       _pipelineNotify()
-  withEnv(['MIRROR_PATH=/mnt/los-mirror/LineageOS/android.git',
-       	 'BUILD_PATH=/mnt/los-build',
-	 'LOCAL_MANIFESTS=/home/lineageos/android/lineage/.repo/local_manifests']) {
 
 	stage('Preperation') {
 	sh 'mkdir -p ~/bin'
