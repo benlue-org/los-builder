@@ -32,22 +32,20 @@ node {
   try {
       _pipelineNotify()
 
-      stage('preperation') {
+      stage('Preperation') {
 	sh 'mkdir -p ~/bin'
         sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
         sh 'chmod a+x ~/bin/repo'
 //        echo "Downloading ${params.device}.xml ..."      
       }
-//      stage('SCM Checkout') {
-//        echo "Pulling changes from branch ${params.branch}"
-//        checkout([$class: 'GitSCM',
-//                  branches: [[name: "${params.branch}"]],
-//                  doGenerateSubmoduleConfigurations: false,
-//                extensions: [[$class: 'CleanBeforeCheckout']],
-//                submoduleCfg: [],
-//                userRemoteConfigs: [[url: 'https://github.com/openwrt/openwrt.git']]
-//              ])  
-//    }
+      stage('Repo Sync') {
+	withEnv(['MIRROR_PATH=/mnt/los-mirror/LineageOS/android.git',
+             	 'BUILD_PATH=/mnt/los-build/lineage-16.0',
+		 'LOCAL_MANIFESTS=/home/lineageos/android/lineage/.repo/local_manifests']) {
+	dir("${BUILD_PATH}") {
+	sh 'ls -lah'
+	}
+      }
  
 //    stage('Update Feeds') {
         //sh "mv feeds.conf feeds.conf.old"
