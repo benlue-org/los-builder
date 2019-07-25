@@ -47,6 +47,7 @@ node {
 	  echo "${params.device}"
           echo "${params.branch}"
 	  echo "${BUILD_PATH}"
+	  sh 'ls -lah "${WORKSPACE}/los-build"'
 	  //sh 'printenv'
 	  sh 'ls -lah'
 	  
