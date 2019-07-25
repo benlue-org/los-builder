@@ -36,18 +36,20 @@ node {
 	sh 'mkdir -p ~/bin'
         sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
         sh 'chmod a+x ~/bin/repo'
+	sh 'ln -s /mnt/los-build ${WORKSPACE}/los-build'
 //        echo "Downloading ${params.device}.xml ..."      
   }
       stage('Repo Sync') {
 	      withEnv(['MIRROR_PATH=/mnt/los-mirror/LineageOS/android.git',
-       	 'BUILD_PATH=/mnt/los-build',
-	 'LOCAL_MANIFESTS=/home/lineageos/android/lineage/.repo/local_manifests']) {
+       	 	       'BUILD_PATH=/mnt/los-build',
+	 	       'LOCAL_MANIFESTS=/home/lineageos/android/lineage/.repo/local_manifests']) {
 	dir("${env.BUILD_PATH}") {
 	  echo "${params.device}"
           echo "${params.branch}"
 	  echo "${BUILD_PATH}"
 	  //sh 'printenv'
 	  sh 'ls -lah'
+	  
 	}
       }
  
