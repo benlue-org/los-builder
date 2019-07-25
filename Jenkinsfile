@@ -36,7 +36,7 @@ node {
 	sh 'mkdir -p ~/bin'
         sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
         sh 'chmod a+x ~/bin/repo'
-	sh 'ln -s /mnt/los-build ${WORKSPACE}/los-build'
+	sh 'ln -sf /mnt/los-build ${WORKSPACE}/los-build'
 //        echo "Downloading ${params.device}.xml ..."      
   }
       stage('Repo Sync') {
