@@ -51,6 +51,7 @@ node {
 	sh 'mkdir -p ~/bin'
         sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
         sh 'chmod a+x ~/bin/repo'
+	sh 'ls -lah ~/bin/repo'		
 	sh label: 'source ~/.profile', returnStdout: true, script: '. .profile'
 	// sh 'source ~/.profile'
 	sh 'repo sync'
