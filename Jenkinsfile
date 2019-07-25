@@ -41,9 +41,9 @@ node {
   }
       stage('Repo Sync') {
 	      withEnv(['MIRROR_PATH=/mnt/los-mirror/LineageOS/android.git',
-       	 	       'BUILD_PATH=/mnt/los-build',
+       	 	       "BUILD_PATH=${env.WORKSPACE}/los-build",
 	 	       'LOCAL_MANIFESTS=/home/lineageos/android/lineage/.repo/local_manifests']) {
-	dir("${env.BUILD_PATH}") {
+	dir('los-build') {
 	  echo "${params.device}"
           echo "${params.branch}"
 	  echo "${BUILD_PATH}"
