@@ -43,7 +43,7 @@ node {
 	      withEnv(['MIRROR_PATH=/mnt/los-mirror/LineageOS/android.git',
        	 	       "BUILD_PATH=${env.WORKSPACE}/los-build",
 	 	       'LOCAL_MANIFESTS=/home/lineageos/android/lineage/.repo/local_manifests']) {
-	dir('los-build') {
+	dir("${env.BUILD_PATH}") {
 	  echo "${params.device}"
           echo "${params.branch}"
 	  echo "${BUILD_PATH}"
