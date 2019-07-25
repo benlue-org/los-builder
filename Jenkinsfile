@@ -48,13 +48,13 @@ node {
 	  //echo "${BUILD_PATH}"
 	  sh 'ls -lah "${WORKSPACE}/los-build"'
 	  //sh 'printenv'
-	sh ''' #/bin/bash
-	       mkdir -p ~/bin
-               curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-               chmod a+x ~/bin/repo
-	       source ~/.profile
-	       repo sync
-	   '''
+	sh 'mkdir -p ~/bin'
+        sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
+        sh 'chmod a+x ~/bin/repo'
+	sh label: 'source ~/.profile', returnStdout: true, script: 'source ~/.profile'
+	// sh 'source ~/.profile'
+	sh 'repo sync'
+	   
 	  
 	}
       }
