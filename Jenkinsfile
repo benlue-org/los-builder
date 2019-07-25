@@ -48,19 +48,14 @@ node {
 	  //echo "${BUILD_PATH}"
 	  sh 'ls -lah "${WORKSPACE}/los-build"'
 	  //sh 'printenv'
-	sh 'mkdir -p ~/bin'
-        sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
-        sh 'chmod a+x ~/bin/repo'
-	sh 'repo sync'
+	sh ''' mkdir -p ~/bin
+               curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+               chmod a+x ~/bin/repo
+	       repo sync
+	   '''
 	  
 	}
       }
- 
-        stage('Repo Sync') {
-        sh "repo sync"
-//      sh "wget https://raw.githubusercontent.com/benlue-org/openwrt-builder/master/feeds/feeds.conf"
-//      sh label: 'Feeds Update', returnStdout: true, script: './scripts/feeds update -a'
-    }
      
 //    stage ('Install Feeds') {
 //	sh label: 'Feeds Install', returnStdout: true, script: './scripts/feeds install -a'
