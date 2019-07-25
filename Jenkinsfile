@@ -45,7 +45,7 @@ node {
 	dir('${env.BUILD_PATH}') {
 	  echo "${params.device}"
           echo "${params.branch}"
-	  echo '${BUILD_PATH}'
+	  echo "${BUILD_PATH}"
 	  //sh 'printenv'
 	  sh 'ls -lah'
 	}
