@@ -28,7 +28,7 @@ properties([parameters([choice(choices: ['jfltexx', 'jfvelte', 'TL-WR1043NDv1'],
 			])
 ])
 
-node('master') {
+node {
   try {
       _pipelineNotify()
   withEnv(['MIRROR_PATH=/mnt/los-mirror/LineageOS/android.git',
