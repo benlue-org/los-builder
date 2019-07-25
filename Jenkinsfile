@@ -40,7 +40,6 @@ node {
         sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
         sh 'chmod a+x ~/bin/repo'
 //        echo "Downloading ${params.device}.xml ..."      
-      }
   }
 //      stage('Repo Sync') {
 
@@ -73,6 +72,7 @@ node {
 //      stage('Archive') {
 //        archiveArtifacts 'bin/targets/**/**/*.bin'
 //      }
+  }
   }
   catch (e) {
       currentBuild.result = "FAILED"
