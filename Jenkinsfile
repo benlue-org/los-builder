@@ -42,8 +42,8 @@ node {
 //        echo "Downloading ${params.device}.xml ..."      
   }
       stage('Repo Sync') {
-	echo "${params.device}"
-        echo "${params.branch}"
+	echo '${params.device}'
+        echo '${params.branch}'
 	sh 'printenv'
 	sh 'ls -lah'
 	}
