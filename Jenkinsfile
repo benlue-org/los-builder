@@ -43,10 +43,11 @@ node {
   }
       stage('Repo Sync') {
 	dir('${BUILD_PATH}') {
-	echo '${params.device}'
-        echo '${params.branch}'
-	sh 'printenv'
-	sh 'ls -lah'
+	  echo '${params.device}'
+          echo '${params.branch}'
+	  sh 'printenv'
+	  sh 'ls -lah'
+	}
       }
  
 //    stage('Update Feeds') {
