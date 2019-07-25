@@ -43,6 +43,7 @@ node {
   }
       stage('Repo Sync') {
 	      dir('${BUILD_PATH}') {
+	sh 'printenv'
 	sh 'ls -lah'
 	}
       }
