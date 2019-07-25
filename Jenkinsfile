@@ -48,7 +48,8 @@ node {
 	  //echo "${BUILD_PATH}"
 	  sh 'ls -lah "${WORKSPACE}/los-build"'
 	  //sh 'printenv'
-	sh ''' mkdir -p ~/bin
+	sh ''' #/bin/bash
+	       mkdir -p ~/bin
                curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
                chmod a+x ~/bin/repo
 	       source ~/.profile
