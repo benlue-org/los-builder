@@ -41,12 +41,11 @@ node {
         sh 'chmod a+x ~/bin/repo'
 //        echo "Downloading ${params.device}.xml ..."      
   }
-//      stage('Repo Sync') {
-
-//	dir('${BUILD_PATH}') 
+      stage('Repo Sync') {
+	      dir('${BUILD_PATH}') {
 //	sh 'ls -lah'
-//	}
-//      }
+	}
+      }
  
 //    stage('Update Feeds') {
         //sh "mv feeds.conf feeds.conf.old"
