@@ -42,6 +42,9 @@ node {
 //        echo "Downloading ${params.device}.xml ..."      
   }
       stage('Repo Sync') {
+	      withEnv(['MIRROR_PATH=/mnt/los-mirror/LineageOS/android.git',
+       	 'BUILD_PATH=/mnt/los-build',
+	 'LOCAL_MANIFESTS=/home/lineageos/android/lineage/.repo/local_manifests']) {
 	dir('${BUILD_PATH}') {
 	  echo '${params.device}'
           echo '${params.branch}'
