@@ -33,9 +33,6 @@ node {
       _pipelineNotify()
 
 	stage('Preperation') {
-	sh 'mkdir -p ~/bin'
-        sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
-        sh 'chmod a+x ~/bin/repo'
 	sh 'ln -sf /mnt/los-build ./los-build'
 //        echo "Downloading ${params.device}.xml ..."      
   }
@@ -46,12 +43,15 @@ node {
 		      
 	dir("${WORKSPACE}/los-build/${params.branch}") {	      
 //	dir("${env.BUILD_PATH}"/"${params.branch}") {
-	  echo "${params.device}"
-          echo "${params.branch}"
-	  echo "${BUILD_PATH}"
+	  //echo "${params.device}"
+          //echo "${params.branch}"
+	  //echo "${BUILD_PATH}"
 	  sh 'ls -lah "${WORKSPACE}/los-build"'
 	  //sh 'printenv'
-	  sh 'ls -lah'
+	sh 'mkdir -p ~/bin'
+        sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
+        sh 'chmod a+x ~/bin/repo'
+	sh 'repo sync'
 	  
 	}
       }
