@@ -32,7 +32,7 @@ node {
   try {
       _pipelineNotify()
   withEnv(['MIRROR_PATH=/mnt/los-mirror/LineageOS/android.git',
-       	 'BUILD_PATH=/mnt/los-build/lineage-16.0',
+       	 'BUILD_PATH=/mnt/los-build',
 	 'LOCAL_MANIFESTS=/home/lineageos/android/lineage/.repo/local_manifests']) {
 
 	stage('Preperation') {
@@ -42,6 +42,7 @@ node {
 //        echo "Downloading ${params.device}.xml ..."      
   }
       stage('Repo Sync') {
+	dir('${BUILD_PATH}') {
 	echo '${params.device}'
         echo '${params.branch}'
 	sh 'printenv'
