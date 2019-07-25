@@ -42,7 +42,7 @@ node {
 //        echo "Downloading ${params.device}.xml ..."      
   }
       stage('Repo Sync') {
-	      dir('${BUILD_PATH}') {
+	      dir('${MIRROR_PATH}') {
 	sh 'printenv'
 	sh 'ls -lah'
 	}
