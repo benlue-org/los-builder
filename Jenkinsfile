@@ -53,10 +53,10 @@ node {
         sh 'chmod a+x ~/bin/repo'
 	sh 'ls -lah ~/bin/repo'		
 	//sh label: 'source ~/.profile', returnStdout: true, script: '. .profile'
-	sh '''	
+	sh ''' set -x
 	   source ~/.profile
-	   repo sync
-	'''   
+	'''
+	sh 'repo sync'
 	  
 	}
       }
