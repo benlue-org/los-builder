@@ -41,6 +41,7 @@ node {
         sh 'chmod a+x ~/bin/repo'
 //        echo "Downloading ${params.device}.xml ..."      
       }
+  }
 //      stage('Repo Sync') {
 
 //	dir('${BUILD_PATH}') 
@@ -79,5 +80,5 @@ node {
   }
   finally {
       _pipelineNotify(currentBuild.result)
-  }}
+  }
 }
