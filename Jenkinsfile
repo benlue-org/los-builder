@@ -22,7 +22,7 @@ def _pipelineNotify(String buildStatus = 'STARTED') {
 }
 
 properties([parameters([choice(choices: ['jfltexx', 'jfvelte', 'TL-WR1043NDv1'], description: 'Select your device to build', name: 'device'), 
-			choice(choices: ['master', 'openwrt-18.06', 'openwrt-19.07', 'develop'], description: 'Select your Branch to buils', name: 'branch'), 
+			choice(choices: ['lineage-16.0', 'lineage-15.1', 'lineage-15.0', 'develop'], description: 'Select your Branch to buils', name: 'branch'), 
 			choice(choices: ['test1', 'test2', 'test3', 'test4'], description: 'Treffe deine Auswahl für Build 3', name: 'test'),
 			booleanParam(defaultValue: true, description: 'Willst du ein clean build?', name: 'make clean')]), [$class: 'JiraProjectProperty'], pipelineTriggers([[$class: 'PeriodicFolderTrigger', interval: '1d']
 			])
@@ -36,7 +36,7 @@ node {
 	sh 'mkdir -p ~/bin'
         sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
         sh 'chmod a+x ~/bin/repo'
-        echo "Downloading ${params.device}.xml ..."      
+//        echo "Downloading ${params.device}.xml ..."      
       }
 //      stage('SCM Checkout') {
 //        echo "Pulling changes from branch ${params.branch}"
