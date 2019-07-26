@@ -21,7 +21,7 @@ node('swarm') {
 			}
 		}
 		stage('Patching Process'){
-			dir("${WORKSPACE}/los-build/${params.branch}") {
+			dir("${WORKSPACE}/los-build/$'{params.branch}'") {
 				echo "Patching Process"
 			}
 		}
