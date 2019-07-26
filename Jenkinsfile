@@ -61,14 +61,6 @@ node {
 	}
       }
      
-	stage('Patching Process') { 
-  		dir("${WORKSPACE}/los-build/${params.branch}") {
-			echo "Nothing patched..."
-			sh ''' set -x
-                	./device/samsung/jf-common/patches/apply.sh
-            		'''
-		}
-	}
   }
   catch (e) {
       currentBuild.result = "FAILED"
