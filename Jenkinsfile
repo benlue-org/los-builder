@@ -6,8 +6,8 @@ properties([parameters([choice(choices: ['jfltexx', 'jfvelte', 'sunny'], descrip
 
 node('swarm') {
     withEnv(['MIRROR_PATH=/mnt/los-mirror/LineageOS/android.git',
-			 'BUILD_PATH=${env.WORKSPACE}/los-build',
-			 'LOCAL_MANIFESTS=/home/lineageos/android/lineage/.repo/local_manifests']) {
+	     'BUILD_PATH=${env.WORKSPACE}/los-build',
+     	     'LOCAL_MANIFESTS=/home/lineageos/android/lineage/.repo/local_manifests']) {
 			     
 		stage('Preparation'){
 			dir("${WORKSPACE}/los-build/${params.branch}") {
@@ -16,6 +16,7 @@ node('swarm') {
 		}
 		stage('Repo Sync'){
 			dir("${WORKSPACE}/los-build/${params.branch}") {
+				sh 'repo init -u ${MIRROR_PATH} -b ${params.branch}'
 				sh 'ls -lah'
 			}
 		}
