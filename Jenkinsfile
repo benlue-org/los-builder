@@ -12,6 +12,9 @@ node('swarm') {
 		stage('Preparation'){
 			dir("${WORKSPACE}/los-build/${params.branch}") {
 			    sh 'ln -sf /mnt/los-build ./los-build'
+			    sh 'mkdir -p ~/bin'
+                	    sh 'curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo'
+                            sh 'chmod a+x ~/bin/repo'
 			}	
 		}
 		stage('Repo Sync'){
