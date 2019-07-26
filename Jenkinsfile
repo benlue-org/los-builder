@@ -19,12 +19,12 @@ node('swarm') {
 		}
 		stage('Repo Sync'){
 			dir("${WORKSPACE}/los-build/${params.branch}") {
-				sh '''#!/bin/bash
-				   set -x
-				   source ~/.profile
-				   repo init -u "${MIRROR_PATH}" -b $branch
-				   repo sync -f --force-sync --force-broken --no-clone-bundle --no-tags -j$(nproc --all)
-				'''		
+			    sh '''#!/bin/bash
+			       set -x
+			       source ~/.profile
+			       repo init -u "${MIRROR_PATH}" -b $branch
+			       repo sync -f --force-sync --force-broken --no-clone-bundle --no-tags -j$(nproc --all)
+			    '''		
 			}
 		}
 		stage('Patching Process'){
