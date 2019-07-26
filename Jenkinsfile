@@ -16,12 +16,12 @@ node('swarm') {
 		}
 		stage('Repo Sync'){
 			dir("${WORKSPACE}/los-build/${params.branch}") {
-				sh 'repo init -u ${MIRROR_PATH} -b ${params.branch}'
+				sh 'repo init -u $"{MIRROR_PATH}" -b $"{params.branch}"'
 				sh 'ls -lah'
 			}
 		}
 		stage('Patching Process'){
-			dir("${WORKSPACE}/los-build/$'{params.branch}'") {
+			dir("${WORKSPACE}/los-build/${params.branch}") {
 				echo "Patching Process"
 			}
 		}
