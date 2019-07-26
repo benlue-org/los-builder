@@ -23,6 +23,7 @@ node('swarm') {
 				   set -x
 				   source ~/.profile
 				   repo init -u "${MIRROR_PATH}" -b $branch
+				   repo sync -f --force-sync --force-broken --no-clone-bundle --no-tags -j$(nproc --all)
 				'''		
 			}
 		}
