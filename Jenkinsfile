@@ -61,25 +61,14 @@ node {
 	}
       }
      
-//    stage ('Install Feeds') {
-//	sh label: 'Feeds Install', returnStdout: true, script: './scripts/feeds install -a'
-//        sh "rm -f .config"
-//        sh "rm -f diffconfig"
-//        sh "wget https://raw.githubusercontent.com/benlue-org/openwrt-builder/master/profiles/ar71xx/tlwdr4300v1/diffconfig"
-//        sh "mv diffconfig .config"
-//        sh "echo CONFIG_TARGET_ar71xx_generic_DEVICE_tl-wdr4300-v1=y"
-//        sh "make defconfig"	  
-//      }
-      
-//      stage('Build') {
-        //sh label: 'Make Clean', returnStdout: true, script: 'make clean'
-//        sh label: 'Build Process', returnStdout: true, script: 'make -j1 V=sc'
-//      }
-      
-//      stage('Archive') {
-//        archiveArtifacts 'bin/targets/**/**/*.bin'
-//      }
-  }
+	stage('Patching Process') { 
+  		dir("${WORKSPACE}/los-build/${params.branch}") {
+			echo "Nothing patched..."
+			sh ''' set -x
+                	./device/samsung/jf-common/patches/apply.sh
+            		'''
+		}
+	}
   }
   catch (e) {
       currentBuild.result = "FAILED"
