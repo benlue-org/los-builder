@@ -1,4 +1,4 @@
-properties([parameters([choice(choices: ['jfltexx', 'jfvelte', 'sunny'], description: 'Select your device', name: 'device'),
+properties([parameters([choice(choices: ['jfltexx', 'jfvelte', 'cheeseburger', 'bacon', 'j5xnlte', 'hero2lte', 'herolte', ''], description: 'Select your device', name: 'device'),
                         choice(choices: ['lineage-16.0', 'lineage-15.1', 'lineage-15.0', 'develop'], description: 'Select your branch', name: 'branch'),
                         choice(choices: ['test 1', 'test 2', 'test 3'], description: 'Select your test', name: 'test'),
                         booleanParam(defaultValue: true, description: 'Do you build clean?', name: 'make clean')]),
