@@ -21,6 +21,7 @@ node('swarm') {
 			dir("${WORKSPACE}/los-build/${params.branch}") {
 				sh '''#!/bin/bash
 				   set -x
+				   source ~/.profile
 				   repo init -u "${MIRROR_PATH}" -b $branch
 				'''		
 			}
