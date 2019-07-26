@@ -40,12 +40,12 @@ node('swarm') {
 				echo "OTA Package"
 			}
 		}
-        stage('Archiving') {
+        	stage('Archiving') {
 			dir("${WORKSPACE}/los-build/${params.branch}") {
 				echo "Something"
 			}
 		}
-        stage('Publishing') {
+        	stage('Publishing') {
 			dir("${WORKSPACE}/los-build/${params.branch}") {
 				echo "Something"
 			}
