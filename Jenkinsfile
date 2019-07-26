@@ -55,7 +55,7 @@ node {
 	//sh label: 'source ~/.profile', returnStdout: true, script: '. .profile'
 	sh '''	
 	   source ~/.profile
-	   repo sync -f --force-sync --force-broken --no-clone-bundle --no-tags -j$(nproc --all)
+	   //repo sync -f --force-sync --force-broken --no-clone-bundle --no-tags -j$(nproc --all)
 	'''   
 	  
 	}
