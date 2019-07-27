@@ -224,7 +224,7 @@ int publishToPortal(String path) {
   }
 }
 
-node('builder') {
+node('swarm') {
     try {
         currentBuild.description = env.BUILD_PRODUCT+'_'+env.DEVICE+'-'+env.BRANCH
         stage('Preparation') {
